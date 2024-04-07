@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style.css') }}">
+    {% block head %}{% endblock %}
+    <title>Киберспорт</title>
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <img src="{{ url_for('static', path='logo.png') }}" alt="Logo">
+            <ul>
+                <li><a href="base">CyberCS2</a></li>
+                <li><a href="search">Новости</a></li>
+            </ul>
+        </div>
+        <div class="right-header">
+            <a href="my-account">Аккаунт</a>
+            <a href="#">Настройки</a>
+            <a href="registration">Вход/Регистрация</a> <!-- Добавляем ссылку на страницу регистрации -->
+        </div>
+    </header>
+    <div id="content">
+        {% block content %}
+            <div class="content-wrapper">
+                <div class="image-wrapper">
+                    <img src="{{ url_for('static', path='navi.jpg') }}" alt="Navi">
+                </div>
+                <div class="text-wrapper">
+                    <h1>Привет, добро пожаловать на наш сайт!</h1>
+                    <p>Здесь вы найдете самые свежие результаты турниров по игре CS2.</p>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

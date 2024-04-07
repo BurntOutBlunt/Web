@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script>
+    async function registerUser() {
+        const email = document.getElementById("email").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const role_id = 1;  // Укажите нужный role_id
+
+        const userData = {
+            email: email,
+            username: username,
+            password: password,
+            role_id: role_id
+        };
+
+        try {
+            const response = await fetch('/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                // Если регистрация прошла успешно, отобразите сообщение об успешной регистрации
+                showNotification("Регистрация прошла успешно!", "success");
+                console.log('Регистрация прошла успешно!');
+            } else {
+                // Если произошла ошибка при регистрации, отобразите соответствующее сообщение об ошибке
+                const errorData = await response.json();
+                if (errorData.detail === "REGISTER_USER_ALREADY_EXISTS") {
+                    showNotification("Пользователь с таким email уже существует", "error");
+                } else {
+                    showNotification("Ошибка при регистрации: " + errorData.detail, "error");
+                }
+                console.error('Ошибка при регистрации:', errorData.detail);
+            }
+        } catch (error) {
+            console.error('Произошла ошибка:', error);
+        }
+    }
+
+    // Функция для отображения всплывающего сообщения
+    function showNotification(message, type) {
+        const notification = document.getElementById("notification");
+        notification.innerText = message;
+        notification.className = "notification " + type;
+        notification.style.display = "block";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 5000);
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="registration-container">
+    <h2>Регистрация</h2>
+    <form class="registration-form">
+        <input id="email" type="email" placeholder="Email" class="registration-input">
+        <input id="username" type="text" placeholder="Username" class="registration-input">
+        <input id="password" type="password" placeholder="Password" class="registration-input">
+        <button onclick="registerUser()" class="registration-button">Зарегистрироваться</button>
+        <div class="sign-in-link">
+            <a href="/pages/sign-in">Уже есть аккаунт? Войти</a>
+        </div>
+    </form>
+</div>
+
+<!-- Элемент для отображения всплывающего сообщения -->
+<div id="notification" class="notification"></div>
+{% endblock %}

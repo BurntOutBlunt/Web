@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script>
+    async function loginUser() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const userData = {
+            username: email,
+            password: password,
+            scope: "",
+            grant_type: "password",
+            client_id: "",
+            client_secret: "",
+        };
+
+        try {
+            const response = await fetch('/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(userData),
+            });
+
+            if (response.ok) {
+                // Если вход выполнен успешно, отобразите сообщение о успешном входе
+                showNotification("Вход выполнен. Добро пожаловать!", "success");
+                console.log('"Вход выполнен успешно!');
+            } else {
+                // Если произошла ошибка при входе, отобразите соответствующее сообщение об ошибке
+                const errorData = await response.json();
+                showNotification("Ошибка при входе: " + errorData.detail, "error");
+                console.error('Ошибка при входе:', errorData.detail);
+            }
+        } catch (error) {
+            console.error('Произошла ошибка:', error);
+        }
+    }
+
+    // Функция для отображения всплывающего сообщения
+    function showNotification(message, type) {
+        const notification = document.getElementById("notification");
+        notification.innerText = message;
+        notification.className = "notification " + type;
+        notification.style.display = "block";
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 5000);
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="sign-in-container">
+    <h2>Вход</h2>
+    <form class="sign-in-form" method="post" action="/auth/login">
+        <input name="username" type="email" placeholder="Email" class="sign-in-input">
+        <input name="password" type="password" placeholder="Password" class="sign-in-input">
+        <button type="submit" class="sign-in-button">Войти</button>
+        <div class="sign-in-link">
+            <a href="/pages/registration">Нет аккаунта? Зарегистрироваться</a>
+        </div>
+    </form>
+</div>
+
+<!-- Элемент для отображения всплывающего сообщения -->
+<div id="notification" class="notification"></div>
+{% endblock %}

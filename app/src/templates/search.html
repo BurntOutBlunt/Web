@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script>
+    const searchForArticle = () => {
+        const searchInputValue = document.getElementById("article_search").value;
+        window.location.href = `/pages/search/${searchInputValue}`;
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <div class="search-field">
+        <input id="article_search" type="text" placeholder="Название новости" class="search-input">
+        <button onclick="searchForArticle()" class="search-button">Поиск по новостям</button>
+    </div>
+    <span class="article-examples">Например: Katowice, Major</span>
+    {% for article in articles %}
+        <div class="article">
+            <div class="article-details">
+                <span class="article-title">{{ article.title }}</span>
+                <span class="article-type">{{ article.type }}</span>
+                <span class="article-score">{{ article.score }}</span>
+                <span class="article-date">{{ article.date }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

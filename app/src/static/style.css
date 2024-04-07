@@ -1,0 +1,332 @@
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+}
+
+.left-header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.left-header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.left-header li {
+    margin-right: 20px;
+}
+
+.left-header a {
+    text-decoration: none;
+    color: #333;
+}
+
+.right-header a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.registration-container {
+    max-width: 400px; /* Устанавливаем максимальную ширину блока */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Выравниваем блок по центру */
+    margin-top: 50px; /* Добавляем отступ сверху */
+}
+
+.registration-container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.registration-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.registration-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Стили для кнопки регистрации */
+.registration-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Стили для блока поиска */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-field {
+    margin-top: 20px; /* Небольшой отступ от заголовка */
+}
+
+/* Стили для поля ввода */
+.search-input {
+    width: 300px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Стили для кнопки поиска */
+.search-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для примеров операций */
+.article-examples {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Стили для блока операций */
+.article {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для элементов операций */
+.article-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для типа операции */
+.article-type {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стили для даты операции */
+.article-date {
+    color: #666;
+}
+
+/* Стили для количества операции */
+.article-title {
+    color: #555;
+}
+
+/* Стили для figi операции */
+.article-score {
+    color: #777;
+}
+
+.sign-in-container {
+    max-width: 400px; /* Устанавливаем максимальную ширину блока */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Выравниваем блок по центру */
+    margin-top: 50px; /* Добавляем отступ сверху */
+}
+
+.sign-in-container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sign-in-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sign-in-container input[type="email"],
+.sign-in-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.sign-in-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Стили для кнопки регистрации */
+.sign-in-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для всплывающего сообщения */
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+
+/* Стили для ссылки "Уже есть аккаунт? Войти" */
+.sign-in-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sign-in-link a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #333;
+    font-size: 14px;
+}
+
+.sign-in-link a:hover {
+    text-decoration: underline;
+}
+
+/* Общие стили для контента */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Стили для изображения */
+.image-wrapper {
+    flex: 1; /* Занимает всю доступную ширину в родительском контейнере */
+    margin-right: 20px; /* Промежуток между изображением и текстом */
+}
+
+.image-wrapper img {
+    max-width: 100%; /* Изображение не будет выходить за пределы своего контейнера */
+    height: auto; /* Автоматически подстраивается по высоте */
+}
+
+/* Стили для текста */
+.text-wrapper {
+    flex: 2; /* Занимает две части относительно изображения */
+}
+
+/* Дополнительные стили для текста */
+.text-wrapper h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-wrapper p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
