@@ -1,6 +1,5 @@
-from sqlalchemy import TIMESTAMP, Column, Integer, String, Table
-
 from src.database import metadata
+from sqlalchemy import TIMESTAMP, Column, Integer, String, Table
 
 article = Table(
     "article",

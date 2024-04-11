@@ -10,7 +10,7 @@
 ### Stack
 - FastAPI
 - PostgreSQL
-- Docker
+
 
 ---
 

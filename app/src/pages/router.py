@@ -1,14 +1,9 @@
-from datetime import timedelta, datetime
-
-from fastapi import APIRouter, Request, Depends, HTTPException
-from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
-
 from src.articles.router import get_specific_articles, get_all_articles
 from src.auth.base_config import fastapi_users
 from src.auth.manager import get_user_manager
-from src.auth.models import User
 from src.auth.schemas import UserCreate
+from fastapi import APIRouter, Request, Depends, HTTPException
+from fastapi.templating import Jinja2Templates
 
 router = APIRouter(
     prefix="/pages",

@@ -1,14 +1,12 @@
 import time
 
+from src.articles.models import article
+from src.articles.schemas import ArticleCreate
+from src.database import get_async_session
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi_cache.decorator import cache
 from sqlalchemy import insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
-
-from src.auth.base_config import current_user
-from src.articles.models import article
-from src.articles.schemas import ArticleCreate
-from src.database import get_async_session
 
 router = APIRouter(
     prefix="/articles",

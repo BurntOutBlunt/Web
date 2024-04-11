@@ -1,10 +1,9 @@
 from datetime import datetime
 
+from src.database import Base, metadata
 from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
 from sqlalchemy import (JSON, TIMESTAMP, Boolean, Column, ForeignKey, Integer,
                         String, Table)
-
-from src.database import Base, metadata
 
 role = Table(
     "role",
