@@ -16,7 +16,7 @@
 
 ### Run app
 В терминале пропишите команду:
-    uvicorn src.main:app --reload
+'uvicorn src.main:app --reload'
 Перейдите по ссылке: http://127.0.0.1:8000/docs
 Перед вами откроется API проекта.
 ![image](https://github.com/BurntOutBlunt/Web/assets/109072330/82158353-4156-422c-8d48-dd14e04f84b9)
